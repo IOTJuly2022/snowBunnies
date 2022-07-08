@@ -4,14 +4,28 @@
 |------------------------|
 |userID                  |
 |password                |
-|firstName               | *first name and last name need to be seperated into different fields
+|firstName               |
 |lastName                |
-|email                   | *guessing email will be pk?
+|userType                |
+|email                   |
+|isEmployee              |
 |------------------------|
-|updatePassword()        | *nit
+|updatePassword()        |
 |updateFirstName()       | 
-|updateLastName()        | *not sure if we want to update one at a time, or both at the same time?
+|updateLastName()        |
 -------------------------
+            |
+            |        isEmployee
+            |---------------------------|
+            |                           |
+            V                           V
+|------------------------|          |------------------------|    
+|Employee                |          |Customer                |  
+|------------------------|          |------------------------|  
+|                        |          |                        |
+|------------------------|          |------------------------|
+| processProduct()       |          | returnProduct()        |
+--------------------------          --------------------------     
 
 |------------------------|
 |Invoice                 |
@@ -31,14 +45,13 @@
 |paymentDetail           |
 |------------------------|
 |paymentDetailID         |
-|userID                  | *should only keep this if we want to save payment information
 |cardNumber              |
-|cvc                     |
+|cvv                     |
 |cardType                |
 |cardExpiration          |
-|cardBusinessType        | *like mastercard or visa.
+|cardServiceProvider     |
 |------------------------|
-|                        | *don't think we need to have an update here since no refunds.
+|                        |
 -------------------------
 
 |------------------------|
@@ -74,20 +87,20 @@
 |-----------------|
 |name             |
 |productID        |
-|type             | *how would we use this?   
+|type             |  
 |-----------------|
 |addProduct()     |
-|updateProduct()  | *in case of product name change but still needs same id.
+|updateProduct()  |
 |deleteProduct()  |
 ------------------
 
 |-----------------|
 |Cart             |
 |-----------------|
-|cartID           | *nit change
-|userID           | *nit change
-|total            |
-|date             | *easy look up for a user if we want to keep/inplement this feature. 
+|cartID           |
+|userID           |
+|totalCost        |
+|purchaseDate     |
 |-----------------|       
 |addCart()        |
 |removeCart()     |
@@ -99,7 +112,6 @@
 |cartID             |
 |productID          |    
 |-------------------|       
-|addCartProduct()   | *probably have to changes these
+|addCartProduct()   |
 |removeCartProduct()|
-------------------
-
+--------------------
