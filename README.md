@@ -4,20 +4,18 @@
 |------------------------|
 |userID                  |
 |password                |
-|name                    |          
-|phoneNumber             |
+|firstName               |
+|lastName                |
+|userType                |
 |email                   |
-|billingAddress          |
-|delivery                |
-|payment                 |
+|isEmployee              |
 |------------------------|
-|changePassword()        |
-|changeBillingAddress()  |
-|changeDeliveryAddress() |
-|changePayment()         |
---------------------------
+|updatePassword()        |
+|updateFirstName()       | 
+|updateLastName()        |
+-------------------------
             |
-            |
+            |        isEmployee
             |---------------------------|
             |                           |
             V                           V
@@ -26,40 +24,94 @@
 |------------------------|          |------------------------|  
 |                        |          |                        |
 |------------------------|          |------------------------|
-|                        |          |                        |
---------------------------          --------------------------        
-                                                    | 1
-                                                    |                     
-                                                    |
-                                                    |
-                                                    |
-                                                    |
-                                                    |
-                                                    |
-                                                    |
-                                                    |
-                                                    |
-                                                    | *
-                                            |-----------------|
-                                            |Cart             |
-                                            |-----------------|
-                                            |orderID          |
-                                            |customerId       |
-                                            |total            |      
-                                            |-----------------|       
-                                            |addProduct()     |
-                                            |removeProduct()  |
-                                            -------------------
+| processProduct()       |          | returnProduct()        |
+--------------------------          --------------------------     
 
+|------------------------|
+|Invoice                 |
+|------------------------|
+|invoiceID               |
+|userID                  |
+|cartID                  |
+|phoneNumber             |
+|billingDetailID         |
+|deliveryDetailID        | 
+|paymentDetailID         |
+|------------------------|
+|updatePhoneNumber()     |
+-------------------------
 
-|-----------------| 
-|Product          | 
-|-----------------| 
-|name             | 
-|productID        | 
-|type             | 
-|-----------------| 
-|addProduct()     | 
-|deleteProduct()  | 
--------------------  
+|------------------------|
+|paymentDetail           |
+|------------------------|
+|paymentDetailID         |
+|cardNumber              |
+|cvv                     |
+|cardType                |
+|cardExpiration          |
+|cardServiceProvider     |
+|------------------------|
+|                        |
+-------------------------
 
+|------------------------|
+|deliveryDetail          |
+|------------------------|
+|deliveryDetailID        |
+|streetAddress           |
+|streetAddressTwo        |
+|state                   |
+|country                 |
+|zipcode                 |
+|city                    |
+|------------------------|
+|updateDeliveryAddress() |
+-------------------------
+
+|------------------------|
+|billingDetail           |
+|------------------------|
+|deliveryDetailID        |
+|streetAddress           |
+|streetAddressTwo        |
+|state                   |
+|country                 |
+|zipcode                 |
+|city                    |
+|------------------------|
+|updateBillingAddress()  |
+-------------------------
+
+|-----------------|
+|Product          |
+|-----------------|
+|name             |
+|productID        |
+|type             |  
+|-----------------|
+|addProduct()     |
+|updateProduct()  |
+|deleteProduct()  |
+------------------
+
+|-----------------|
+|Cart             |
+|-----------------|
+|cartID           |
+|userID           |
+|total            |
+|date             |
+|-----------------|       
+|addCart()        |
+|removeCart()     |
+------------------
+
+|-------------------|
+|CartProduct        |
+|-------------------|
+|cartID             |
+|productID          |    
+|-------------------|       
+|addCartProduct()   |
+|removeCartProduct()|
+--------------------
