@@ -6,12 +6,25 @@
 |password                |
 |firstName               | *first name and last name need to be seperated into different fields
 |lastName                |
+|userType                | *for customer/employee - can use enums for implementation.
 |email                   | *guessing email will be pk?
 |------------------------|
 |updatePassword()        | *nit
 |updateFirstName()       | 
 |updateLastName()        | *not sure if we want to update one at a time, or both at the same time?
 -------------------------
+            |
+            |
+            |---------------------------|
+            |                           |
+            V                           V
+|------------------------|          |------------------------|    
+|Employee                |          |Customer                |  
+|------------------------|          |------------------------|  
+|                        |          |                        |
+|------------------------|          |------------------------|
+|                        |          |                        |
+--------------------------          --------------------------     
 
 |------------------------|
 |Invoice                 |
@@ -101,5 +114,4 @@
 |-------------------|       
 |addCartProduct()   | *probably have to changes these
 |removeCartProduct()|
-------------------
-
+--------------------
