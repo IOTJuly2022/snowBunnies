@@ -1,5 +1,7 @@
 package com.cognizant.snowbunnies.models;
 
+import java.sql.Date;
+
 import javax.persistence.*;
 
 /**
@@ -27,15 +29,16 @@ public class Cart {
 	@Column(nullable = false)
 	private double totalCost;
 	
+	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
-	final private String purchaseDate;
+	final private Date purchaseDate;
 	
 	/*
 	 * long userID - ID of user making the purchase
 	 * double totalCost - total purchase amount in the cart at the time of purchase
 	 * String purchaseDate - Date when the merchandise was bought
 	 */
-	public Cart(long userID, double totalCost, String purchaseDate) {
+	public Cart(long userID, double totalCost, Date purchaseDate) {
 		this.userID = userID;
 		this.totalCost = totalCost;
 		this.purchaseDate = purchaseDate;
@@ -79,7 +82,7 @@ public class Cart {
 	/**
 	 * @return the purchaseDate
 	 */
-	public String getPurchaseDate() {
+	public Date getPurchaseDate() {
 		return purchaseDate;
 	}
 	
