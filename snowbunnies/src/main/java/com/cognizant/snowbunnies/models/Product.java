@@ -1,6 +1,6 @@
 package com.cognizant.snowbunnies.models;
 
-public enum ProductType {
+enum ProductType {
 	FRUITS,
 	MEAT,
 	FROZEN_FOODS,

@@ -1,6 +1,6 @@
 package com.cognizant.snowbunnies.models;
 
-public enum CardType {
+enum CardType {
 	CREDIT_CARD,
 	DEBIT_CARD;
 }
