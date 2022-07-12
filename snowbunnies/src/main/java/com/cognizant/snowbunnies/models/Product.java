@@ -22,23 +22,23 @@ public class Product {
 	}
 	
 	public String getName() {
-		return this.name;
+		return name;
 	}
 	
 	public void setName(String name) {
-		this.name = name;	
+		this.name = name;
 	}
 	
 	public int getProductID() {
-		return.this.productID
+		return productID;
 	}
 	
 	public void setProductID(int productID) {
 		this.productID = productID;
 	}
 	
-	public String getProductType() {
-		return this.productType
+	public ProductType getProductType() {
+		return productType;
 	}
 	
 	public void setProductType(ProductType productType) {
