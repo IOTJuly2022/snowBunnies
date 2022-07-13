@@ -5,7 +5,7 @@ enum CardType {
 	DEBIT_CARD;
 }
 
-public class paymentDetail {
+public class PaymentDetail {
 	private long paymentDetailID;         
 	private long cardNumber;              
 	private int cvv;                     
@@ -13,7 +13,7 @@ public class paymentDetail {
 	private String cardExpiration;          
 	private String cardServiceProvider;
 	
-	public core(long paymentDetailID, long cardNumber, int cvv, CardType cardType, String cardExpiration,
+	public PaymentDetail(long paymentDetailID, long cardNumber, int cvv, CardType cardType, String cardExpiration,
 			String cardServiceProvider) {
 		this.paymentDetailID = paymentDetailID;
 		this.cardNumber = cardNumber;
