@@ -12,10 +12,10 @@ enum ProductType {
 
 public class Product {
 	private String name;
-	private int productID;
+	private long productID;
 	private ProductType productType;
 	
-	public Product(String name, int productID, ProductType productType) {
+	public Product(String name, long productID, ProductType productType) {
 		this.name = name;
 		this.productID = productID;
 		this.productType = productType;
@@ -29,7 +29,7 @@ public class Product {
 		this.name = name;
 	}
 	
-	public int getProductID() {
+	public long getProductID() {
 		return productID;
 	}
 	
