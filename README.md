@@ -99,8 +99,8 @@
 |-----------------|
 |cartID           |
 |userID           |
-|total            |
-|date             |
+|totalCost        |
+|purchaseDate     |
 |-----------------|       
 |addCart()        |
 |removeCart()     |
