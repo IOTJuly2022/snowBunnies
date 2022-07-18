@@ -1,4 +1,3 @@
-//
 package com.cognizant.snowbunnies.models;
 
 enum ProductType {
