@@ -24,10 +24,15 @@ public class Product {
 	@column(nullable = false)
 	private ProductType productType;
 	
-	public Product(String name, long productID, ProductType productType) {
+	@Temporal(TemporalType.DATE)
+	@Column(nullable = false)
+	private final Date createDate;
+	
+	public Product(String name, long productID, ProductType productType, Date createDate) {
 		this.name = name;
 		this.productID = productID;
 		this.productType = productType;
+		this.createDate = createDate;
 	}
 	
 	public String getName() {
@@ -60,5 +65,9 @@ public class Product {
 	
 	public void deleteProduct(int productID) {
 		
+	}
+	
+	public Date getCreateDate() {
+		return createDate;
 	}
 }
