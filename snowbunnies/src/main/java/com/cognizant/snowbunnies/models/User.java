@@ -3,13 +3,34 @@ package com.cognizant.snowbunnies.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "user")
 public class User {
 	
+	
+	@Id
+	@Column(nullable = false, unique = true)
 	private String username;
+	
+	@Column(nullable = false)
 	private String password;
+	
+	@Column(nullable = false)
 	private int status;
+	
+	@Column(nullable = false)
 	private Cart userCart;
+	
+	@Column(nullable = false)
 	private PaymentDetail paymentDetails;
+	
+	@Column(nullable = false)
 	private List<Invoice> invoiceList;
 	
 	
