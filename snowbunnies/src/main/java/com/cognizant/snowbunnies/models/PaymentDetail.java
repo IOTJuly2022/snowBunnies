@@ -5,12 +5,27 @@ enum CardType {
 	DEBIT_CARD;
 }
 
+@Entity
+@Table(name = "paymentDetail")
 public class PaymentDetail {
-	private long paymentDetailID;         
-	private long cardNumber;              
-	private int cvv;                     
+	
+	@Id
+	@Column(nullable = false, unique = true)
+	private long paymentDetailID; 
+	
+	@Column(nullable = false)
+	private long cardNumber;  
+	
+	@Column(nullable = false)
+	private int cvv;         
+	
+	@Column(nullable = false)
 	private CardType cardType;
-	private String cardExpiration;          
+	
+	@Column(nullable = false)
+	private String cardExpiration;
+	
+	@Column(nullable = false)
 	private String cardServiceProvider;
 	
 	public PaymentDetail(long paymentDetailID, long cardNumber, int cvv, CardType cardType, String cardExpiration,

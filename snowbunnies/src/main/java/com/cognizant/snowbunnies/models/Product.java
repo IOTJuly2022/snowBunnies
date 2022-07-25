@@ -10,9 +10,18 @@ enum ProductType {
 	BAKERY;
 }
 
+@Entity
+@Table(name = "product")
 public class Product {
-	private String name;
+	
+	@Id
+	@Column(nullable = false, unique = true)
 	private long productID;
+	
+	@Column(nullable = false)
+	private String name;
+	
+	@column(nullable = false)
 	private ProductType productType;
 	
 	public Product(String name, long productID, ProductType productType) {
