@@ -1,0 +1,75 @@
+# Modify this code to update the DB schema diagram.
+# To reset the sample schema, replace everything with
+# two dots ('..' - without quotes).
+
+Product
+-
+ProductID PK int
+Name string
+Type string
+
+
+Cart
+-
+CartID PK int FK >- Invoice.CartID
+UserID int FK
+TotalCost money
+PurchaseDate date
+
+CartProduct
+----
+CartProductID PK int
+CartID int FK >- Cart.CartID
+ProductID int FK >- Product.ProductID
+
+User 
+------------
+UserID PK int
+Password string
+FirstName string
+LastName string
+Email email UNIQUE
+IsEmployee bool
+
+Invoice
+----
+InvoiceID PK int
+UserID int FK >- User.UserID
+CartID int FK
+PhoneNumber string
+BillingDetailID int FK - bd.BillingDetailID
+DeliveryDetailID int FK - dd.DeliveryDetailID
+PaymentDetailID int FK - pd.PaymentDetailID
+
+PaymentDetail as pd
+----
+PaymentDetailID PK int
+CardNumber int
+CVV int
+CardType string
+CardExpiration date
+CardServiceProvider string
+
+BillingDetail as bd
+----
+BillingDetailID int PK
+StreetAddress string
+StreetAddress2 string
+State string
+County string
+Zipcode string
+City string
+
+DeliveryDetail as dd
+----
+DeliveryDetailID int PK
+StreetAddress string
+StreetAddress2 string
+State string
+County string
+Zipcode string
+City string
+
+
+
+
