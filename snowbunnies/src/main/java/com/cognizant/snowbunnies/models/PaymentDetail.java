@@ -1,5 +1,7 @@
 package com.cognizant.snowbunnies.models;
 
+import javax.persistence.*;
+
 enum CardType {
 	CREDIT_CARD,
 	DEBIT_CARD;

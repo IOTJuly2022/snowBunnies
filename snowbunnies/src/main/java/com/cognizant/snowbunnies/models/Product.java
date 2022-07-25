@@ -1,5 +1,9 @@
 package com.cognizant.snowbunnies.models;
 
+import java.util.Date;
+
+import javax.persistence.*;
+
 enum ProductType {
 	FRUITS,
 	MEAT,
@@ -21,7 +25,6 @@ public class Product {
 	@Column(nullable = false)
 	private String name;
 	
-	@column(nullable = false)
 	private ProductType productType;
 	
 	@Temporal(TemporalType.DATE)
@@ -63,11 +66,12 @@ public class Product {
 		
 	}
 	
-	public void deleteProduct(int productID) {
-		
-	}
 	
 	public Date getCreateDate() {
 		return createDate;
+	}
+	
+	public void deleteProduct(int productID) {
+		
 	}
 }
