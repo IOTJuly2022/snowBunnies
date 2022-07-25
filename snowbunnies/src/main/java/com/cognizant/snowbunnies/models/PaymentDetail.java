@@ -14,7 +14,7 @@ public class PaymentDetail {
 	@Id
 	@Column(nullable = false, unique = true)
 	private long paymentDetailID; 
-	
+
 	@Column(nullable = false)
 	private long cardNumber;  
 	
@@ -29,6 +29,10 @@ public class PaymentDetail {
 	
 	@Column(nullable = false)
 	private String cardServiceProvider;
+	
+	public PaymentDetail() {
+		super();
+	}
 	
 	public PaymentDetail(long paymentDetailID, long cardNumber, int cvv, CardType cardType, String cardExpiration,
 			String cardServiceProvider) {
@@ -86,5 +90,12 @@ public class PaymentDetail {
 	
 	public void setCardServiceProvider(String cardServiceProvider) {
 		this.cardServiceProvider = cardServiceProvider;
+	}
+	
+	@Override
+	public String toString() {
+		return "PaymentDetail [paymentDetailID=" + paymentDetailID + ", cardNumber=" + cardNumber + ", cvv=" + cvv
+				+ ", cardType=" + cardType + ", cardExpiration=" + cardExpiration + ", cardServiceProvider="
+				+ cardServiceProvider + "]";
 	}
 }

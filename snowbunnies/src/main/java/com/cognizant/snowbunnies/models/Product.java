@@ -17,7 +17,7 @@ enum ProductType {
 @Entity
 @Table(name = "product")
 public class Product {
-	
+
 	@Id
 	@Column(nullable = false, unique = true)
 	private long productID;
@@ -30,6 +30,11 @@ public class Product {
 	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
 	private final Date createDate;
+	
+	public Product() {
+		super();
+		this.createDate = new Date();
+	}
 	
 	public Product(String name, long productID, ProductType productType, Date createDate) {
 		this.name = name;
