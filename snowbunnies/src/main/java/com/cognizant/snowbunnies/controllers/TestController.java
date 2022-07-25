@@ -13,15 +13,21 @@ import java.util.List;
 
 @RestController
 public class TestController {
+	
+    private final String PHONE_NUM = "123-456-7890";	
 
 	@Autowired
     private CartRepository cartRepo;
+	
+	@Autowired
+    private InvoiceRepository invoiceRepo;
 
-    public TestController(CartRepository cartRepo) {
+    public TestController(CartRepository cartRepo, InvoiceRepository invoiceRepo) {
         this.cartRepo = cartRepo;
+        this.invoiceRepo = invoiceRepo;
     }
 
-    @GetMapping("/test")
+    @GetMapping("/testCart")
     public List<Cart> getCarts() {
     	Date date = null;
 		try {
@@ -32,5 +38,15 @@ public class TestController {
     	Cart cart = new Cart(1L, 1.00f, date);
     	cartRepo.save(cart);
         return cartRepo.findAll();
+    }
+    
+    @GetMapping("/testInvoice")
+    public List<Invoice> getInvoices() {
+    	Invoice invoice = new Invoice(1, 2, PHONE_NUM, 3, 4, 5);
+		Invoice i = new Invoice(11, 12, PHONE_NUM, 13,  14, 15);
+    	invoiceRepo.save(invoice);
+    	invoiceRepo.save(i);
+
+        return invoiceRepo.findAll();
     }
 }
