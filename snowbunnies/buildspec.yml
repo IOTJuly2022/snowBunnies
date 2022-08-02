@@ -19,5 +19,5 @@ phases:
       - echo Build completed on `date`
 artifacts:
   files:
-    - 'target/*.jar'
+    - '*/target/*.jar'
   base-directory: snowbunnies
