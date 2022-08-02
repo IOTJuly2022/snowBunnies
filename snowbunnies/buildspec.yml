@@ -8,6 +8,7 @@ phases:
     commands:
       - echo Checking java version
       - java -version
+      - mvn -version
       - echo In the pre_build phase...
       - mvn test
   build:
