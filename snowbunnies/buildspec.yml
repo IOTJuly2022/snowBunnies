@@ -8,6 +8,7 @@ phases:
       - echo Checking java version
       - java -version
       - echo In the pre_build phase...
+      - mvn test
   build:
     commands:
       - echo Build started on `date`
@@ -17,5 +18,5 @@ phases:
       - echo Build completed on `date`
 artifacts:
   files:
-    - target/*.jar
-  discard-paths: yes
+    - '**/*'
+  base-directory: 'target/snowbunnies'
