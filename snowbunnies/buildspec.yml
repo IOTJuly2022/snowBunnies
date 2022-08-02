@@ -6,10 +6,13 @@ phases:
   pre_build:
     on-failure: ABORT
     commands:
-      - echo Checking java version
+      - echo Checking java version/installation
       - java -version
+      - echo Checking maven version/installation
       - mvn -version
       - echo In the pre_build phase...
+      - mvn -f ./snowbunnies -DskipTests clean install
+      - echo running tests
       - mvn -f ./snowbunnies test
   build:
     commands:
