@@ -24,14 +24,19 @@ public class Cart {
 	private long cartID;
 	
 	@Column(nullable = false)
-	private final long userID;
+	private long userID;
 	
 	@Column(nullable = false)
 	private double totalCost;
 	
 	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
-	private final Date purchaseDate;
+	private Date purchaseDate;
+	
+	public Cart() {
+		super();
+	}
+	
 	
 	/*
 	 * long userID - ID of user making the purchase

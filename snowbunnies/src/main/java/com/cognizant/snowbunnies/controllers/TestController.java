@@ -22,10 +22,6 @@ public class TestController {
 	@Autowired
     private InvoiceRepository invoiceRepo;
 
-    public TestController(CartRepository cartRepo, InvoiceRepository invoiceRepo) {
-        this.cartRepo = cartRepo;
-        this.invoiceRepo = invoiceRepo;
-    }
 
     @GetMapping("/testCart")
     public List<Cart> getCarts() {
