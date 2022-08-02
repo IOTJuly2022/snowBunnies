@@ -5,6 +5,8 @@ phases:
       java: corretto11
   pre_build:
     commands:
+      - echo Checking java version
+      - java -version
       - echo In the pre_build phase...
       - mvn test
   build:
