@@ -25,13 +25,13 @@ public class User {
 	private int status;
 	
 	@Column(nullable = false)
-	private Cart userCart;
+	private long userCart;
 	
 	@Column(nullable = false)
-	private PaymentDetail paymentDetails;
+	private long paymentDetails;
 	
-	@Column(nullable = false)
-	private List<Invoice> invoiceList;
+	//@Column(nullable = false)
+	//private List<Invoice> invoiceList;
 	
 	
 
@@ -73,38 +73,38 @@ public class User {
 //		}
 	}
 
-	public Cart getUserCart() {
+	public long getUserCart() {
 		return userCart;
 	}
 
-	public void setUserCart(Cart userCart) {
+	public void setUserCart(long userCart) {
 		this.userCart = userCart;
 	}
 
-	public PaymentDetail getPaymentDetails() {
+	public long getPaymentDetails() {
 		return paymentDetails;
 	}
 
-	public void setPaymentDetails(PaymentDetail paymentDetails) {
+	public void setPaymentDetails(long paymentDetails) {
 		this.paymentDetails = paymentDetails;
 	}
 
-	public List<Invoice> getInvoiceList() {
-		return invoiceList;
-	}
+	//public List<Invoice> getInvoiceList() {
+	//	return invoiceList;
+	//}
 
-	public void setInvoiceList(List<Invoice> invoiceList) {
-		this.invoiceList = invoiceList;
-	}
+	//public void setInvoiceList(List<Invoice> invoiceList) {
+	//	this.invoiceList = invoiceList;
+	//}
 
-	public void addInvoice(Invoice inv) {
-		if(invoiceList != null) {
-			invoiceList.add(inv);
-		} else {
-			invoiceList = new ArrayList<>();
-			invoiceList.add(inv);
-		}
-	}
+	//public void addInvoice(Invoice inv) {
+	//	if(invoiceList != null) {
+	//		invoiceList.add(inv);
+	//	} else {
+	//		invoiceList = new ArrayList<>();
+	//		invoiceList.add(inv);
+	//	}
+	//}
 	
 	
 	

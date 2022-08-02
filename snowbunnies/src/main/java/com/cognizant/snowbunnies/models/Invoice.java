@@ -20,22 +20,26 @@ public class Invoice {
 	private long invoiceID;
 	
 	@Column(nullable = false)
-	private final long userID;
+	private long userID;
 	
 	@Column(nullable = false)
-	private final long cartID;
+	private long cartID;
 	
 	@Column(nullable = false)
-	private final String phoneNumber;
+	private String phoneNumber;
 	
 	@Column(nullable = false)
-	private final long billingDetailID;
+	private long billingDetailID;
 	
 	@Column(nullable = false)
-	private final long deliveryDetailID;
+	private long deliveryDetailID;
 	
 	@Column(nullable = false)
-	private final long paymentDetailID;
+	private long paymentDetailID;
+	
+	public Invoice() {
+		super();
+	}
 	
 	/*
 	 * long userID, cartID, billingID, deliveryID, paymentID - FKs coming from other tables

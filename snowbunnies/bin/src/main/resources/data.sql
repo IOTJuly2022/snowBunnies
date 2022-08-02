@@ -5,4 +5,3 @@ create table Cart(
 	purchaseDate date
 	
 );
-
