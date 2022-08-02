@@ -10,11 +10,11 @@ phases:
       - java -version
       - mvn -version
       - echo In the pre_build phase...
-      - mvn test
+      - mvn -f ./snowbunnies test
   build:
     commands:
       - echo Build started on `date`
-      - mvn package
+      - mvn -f ./snowbunnies package
   post_build:
     commands:
       - echo Build completed on `date`
