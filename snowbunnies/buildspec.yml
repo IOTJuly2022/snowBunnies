@@ -19,5 +19,4 @@ phases:
 artifacts:
   files:
     - 'target/*.jar'
-  base-directory: 'target/snowbunnies'
-  discard-paths: yes
+  base-directory: snowbunnies
