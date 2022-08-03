@@ -12,9 +12,8 @@ phases:
       - mvn -version
       - echo In the pre_build phase...
       - mvn -f ./snowbunnies -DskipTests clean install
-      - echo running tests
-      - mvn -f ./snowbunnies test
   build:
+    on-failure: ABORT
     commands:
       - echo Build started on `date`
       - mvn -f ./snowbunnies -DskipTests package
