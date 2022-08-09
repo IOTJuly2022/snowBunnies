@@ -1,1 +1,1 @@
-web: java -jar ./snowbunnies/target/*.jar
+web: java -jar *.jar
