@@ -24,3 +24,4 @@ artifacts:
   files:
     - 'target/*.jar'
   base-directory: snowbunnies
+  discard-paths: yes
