@@ -16,95 +16,135 @@ public class User {
 	
 	@Id
 	@Column(nullable = false, unique = true)
-	private String username;
+	private long userID;
+	
+	@Column(nullable = false)
+	private String email;
 	
 	@Column(nullable = false)
 	private String password;
 	
 	@Column(nullable = false)
-	private int status;
+	private boolean isEmployee;
 	
 	@Column(nullable = false)
-	private long userCart;
+	private String firstName;
 	
 	@Column(nullable = false)
-	private long paymentDetails;
+	private String lastName;
 	
-	//@Column(nullable = false)
-	//private List<Invoice> invoiceList;
-	
-	
-
-
 	public User() {
 		super();
 	}
 
-	public User(String username, String password, int status) {
+	public User(long userID, String email, String password, boolean isEmployee, String firstName, String lastName) {
 		super();
-		this.username = username;
+		this.userID = userID;
+		this.email = email;
 		this.password = password;
-		this.status = status;
+		this.isEmployee = isEmployee;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+	
+	
+	
+
+
+	public User(String email, String password, boolean isEmployee, String firstName, String lastName) {
+		super();
+		this.email = email;
+		this.password = password;
+		this.isEmployee = isEmployee;
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
 
-	public String getUsername() {
-		return username;
+	/**
+	 * @return the userID
+	 */
+	public long getUsername() {
+		return this.userID;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	/**
+	 * @param username the userID to set
+	 */
+	public void setUsername(long userID) {
+		this.userID = userID;
 	}
 
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	/**
+	 * @return the password
+	 */
 	public String getPassword() {
 		return password;
 	}
 
+	/**
+	 * @param password the password to set
+	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-	public int getStatus() {
-		return status;
+	/**
+	 * @return the isEmployee
+	 */
+	public boolean isEmployee() {
+		return isEmployee;
 	}
 
-	public void setStatus(int status) {
-//		if(user status > a number or the number theyre trying to set) {
-			this.status = status;
-//		}
+	/**
+	 * @param isEmployee the isEmployee to set
+	 */
+	public void setEmployee(boolean isEmployee) {
+		this.isEmployee = isEmployee;
 	}
 
-	public long getUserCart() {
-		return userCart;
+	/**
+	 * @return the firstName
+	 */
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setUserCart(long userCart) {
-		this.userCart = userCart;
+	/**
+	 * @param firstName the firstName to set
+	 */
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public long getPaymentDetails() {
-		return paymentDetails;
+	/**
+	 * @return the lastName
+	 */
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setPaymentDetails(long paymentDetails) {
-		this.paymentDetails = paymentDetails;
+	/**
+	 * @param lastName the lastName to set
+	 */
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	//public List<Invoice> getInvoiceList() {
-	//	return invoiceList;
-	//}
-
-	//public void setInvoiceList(List<Invoice> invoiceList) {
-	//	this.invoiceList = invoiceList;
-	//}
-
-	//public void addInvoice(Invoice inv) {
-	//	if(invoiceList != null) {
-	//		invoiceList.add(inv);
-	//	} else {
-	//		invoiceList = new ArrayList<>();
-	//		invoiceList.add(inv);
-	//	}
-	//}
+	
 	
 	
 	
