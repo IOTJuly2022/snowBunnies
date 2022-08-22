@@ -1,8 +1,5 @@
 package com.cognizant.snowbunnies.models;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -63,14 +60,14 @@ public class User {
 	/**
 	 * @return the userID
 	 */
-	public long getUsername() {
+	public long getUserID() {
 		return this.userID;
 	}
 
 	/**
 	 * @param username the userID to set
 	 */
-	public void setUsername(long userID) {
+	public void setUserID(long userID) {
 		this.userID = userID;
 	}
 
