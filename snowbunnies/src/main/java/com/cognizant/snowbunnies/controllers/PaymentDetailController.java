@@ -25,23 +25,23 @@ public class PaymentDetailController {
     }
     
     @GetMapping("/payment-detail/get/{id}")
-    public PaymentDetail getUserById(@PathVariable("id") Long id) {
+    public PaymentDetail getPaymentById(@PathVariable("id") Long id) {
         return pdRepo.findById(id).get();
     }
     
 
     @PostMapping("/payment-detail/delete/{id}")
-    public void deleteUserById(@PathVariable("id") Long id) {
+    public void deletePaymentById(@PathVariable("id") Long id) {
        pdRepo.deleteById(id);
     }
     
     @PostMapping("/payment-detail/create")
-    public void createUserById(@RequestBody PaymentDetail bd) {
+    public void createPaymentById(@RequestBody PaymentDetail bd) {
        pdRepo.save(bd);
     }
     
     @PostMapping("/payment-detail/update/{id}")
-    public void updateUserById(@RequestBody PaymentDetail bd, @PathVariable("id") Long id) {
+    public void updatePaymentById(@RequestBody PaymentDetail bd, @PathVariable("id") Long id) {
       pdRepo.save(bd);
     }
 
