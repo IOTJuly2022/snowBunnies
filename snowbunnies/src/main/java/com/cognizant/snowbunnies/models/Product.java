@@ -67,16 +67,9 @@ public class Product {
 		this.productType = productType;
 	}
 	
-	public void addProduct() {
-		
-	}
-	
 	
 	public Date getCreateDate() {
 		return createDate;
 	}
 	
-	public void deleteProduct(int productID) {
-		
-	}
 }

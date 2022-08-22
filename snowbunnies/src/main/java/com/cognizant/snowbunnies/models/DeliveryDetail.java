@@ -16,6 +16,9 @@ public class DeliveryDetail {
 	private String streetAddress;
 	
 	@Column(nullable = false)
+	private String streetAddressTwo;
+	
+	@Column(nullable = false)
 	private String state;
 	
 	@Column(nullable = false)
@@ -27,10 +30,11 @@ public class DeliveryDetail {
 	@Column(nullable = false)
 	private String city;
 	
-	public DeliveryDetail(long deliveryDetailID, String streetAddress, String state, String country, int zipcode,
+	public DeliveryDetail(long deliveryDetailID, String streetAddress, String streetAddressTwo, String state, String country, int zipcode,
 			String city) {
 		this.deliveryDetailID = deliveryDetailID;
 		this.streetAddress = streetAddress;
+		this.streetAddressTwo = streetAddressTwo;
 		this.state = state;
 		this.country = country;
 		this.zipcode = zipcode;
@@ -51,6 +55,15 @@ public class DeliveryDetail {
 
 	public void setStreetAddress(String streetAddress) {
 		this.streetAddress = streetAddress;
+	}
+	
+	public String getStreetAddressTwo() {
+		return streetAddressTwo;
+	}
+
+
+	public void setStreetAddressTwo(String streetAddressTwo) {
+		this.streetAddressTwo = streetAddressTwo;
 	}
 
 	public String getState() {

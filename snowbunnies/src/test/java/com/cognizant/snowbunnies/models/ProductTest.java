@@ -37,5 +37,38 @@ public class ProductTest {
     	assertEquals("testProduct", p.getName());
     	assertEquals(date, p.getCreateDate());
     }
+    
+    @Test
+    void whenValidProductType_thenNoErrors() {
+    	p.setProductType(ProductType.BAKERY);
+    	assertEquals(134L, p.getProductID());
+    	assertEquals(ProductType.BAKERY, p.getProductType());
+    	assertEquals("testProduct", p.getName());
+    	assertEquals(date, p.getCreateDate());
+    }
+    
+    @Test
+    void whenValidProductID_thenNoErrors() {
+    	p.setProductID(1);
+    	assertEquals(1L, p.getProductID());
+    	assertEquals(ProductType.MEAT, p.getProductType());
+    	assertEquals("testProduct", p.getName());
+    	assertEquals(date, p.getCreateDate());
+    }
+    
+    @Test
+    void whenValidProductName_thenNoErrors() {
+    	p.setName("hehe");
+    	assertEquals(134L, p.getProductID());
+    	assertEquals(ProductType.MEAT, p.getProductType());
+    	assertEquals("hehe", p.getName());
+    	assertEquals(date, p.getCreateDate());
+    }
+    
+    @Test
+    void whenValidDefaultConstructor_thenNoErrors() {
+    	Product product = new Product();
+    	
+    }
 
 }
