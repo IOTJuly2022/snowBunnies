@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cognizant.snowbunnies.models.BillingDetail;
-import com.cognizant.snowbunnies.models.User;
 import com.cognizant.snowbunnies.repositories.BillingDetailRepository;
 
 @RestController
