@@ -1,0 +1,18 @@
+<div>
+<nav>
+    <ul>
+        <li><a [routerLink]="['/home']" routerLinkActive="active" *ngIf="isAuthenticated">Home</a></li>
+        <li><a [routerLink]="['/account']" routerLinkActive="active" *ngIf="isAuthenticated">Account</a></li>
+        <li><a [routerLink]="['/cart']" routerLinkActive="active" *ngIf="isAuthenticated">Cart</a></li>
+        <li><a [routerLink]="['/login']" routerLinkActive="active" *ngIf="!isAuthenticated">Login</a></li>
+        <li><a [routerLink]="['/signup']" routerLinkActive="active" *ngIf="!isAuthenticated">Signup</a></li>
+        <li><a routerLink="['']" (click)="signOut()" *ngIf="isAuthenticated">Sign out</a></li>
+    </ul> 
+</nav>
+</div>
+
+<router-outlet></router-outlet>
+
+
+
+
