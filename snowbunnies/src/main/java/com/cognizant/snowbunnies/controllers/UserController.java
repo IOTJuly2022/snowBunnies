@@ -34,6 +34,7 @@ public class UserController {
     }
     @PostMapping("/user/create")
     public void createUserById(@RequestBody User user) {
+    	user.setEmployee(false);
        userRepo.save(user);
     }
     
