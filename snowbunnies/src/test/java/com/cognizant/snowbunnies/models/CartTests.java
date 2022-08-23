@@ -47,5 +47,10 @@ class CartTests {
     	assertEquals(1L, c.getUserID());
     }
     
+    @Test
+    void whenValidDefaultConstructor_thenNoErrors() {
+    	Cart cart = new Cart();
+    }
+    
     
 }

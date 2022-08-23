@@ -32,4 +32,9 @@ class InvoiceTests {
     	assertEquals(4L, i.getDeliveryDetailID());
     	assertEquals(5L, i.getPaymentDetailID());
     }
+    
+    @Test
+    void whenValidDefaultConstructor_thenNoErrors() {
+    	Invoice invoice = new Invoice();
+    }
 }
